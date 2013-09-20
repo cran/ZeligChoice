@@ -36,7 +36,9 @@ param.oprobit <- function(obj, num=1000, ...) {
        
        alpha = NULL,
        link = NULL,
-       linkinv = ZeligChoice:::oprobit.linkinverse
+       # linkinv = ZeligChoice:::oprobit.linkinverse
+       # CRAN policy on self referential :::
+       linkinv = oprobit.linkinverse
        )
 }
 
@@ -45,10 +47,6 @@ param.oprobit <- function(obj, num=1000, ...) {
 # @eta:
 oprobit.linkinverse <- function(eta, zeta) {
     tmp1 <- matrix(1, nrow = length(eta), ncol = length(zeta) + 1)
-
-    tmp1[, 1:length(zeta)] <- pnorm(eta - zeta)
-
-    # sapply(zeta, ilogit, e = eta)
-
+    tmp1[, 1:length(zeta)] <- pnorm(zeta - eta)
     tmp1
 }

@@ -4,7 +4,7 @@
 #' @param data a data.frame 
 #' @return a list specifying '.function'
 #' @export
-zelig2mlogit <- function (formula, ..., data) {
+zelig2mlogit <- function (formula, weights=NULL, repweights=NULL, ..., data) {
 
   .formula <- parse.formula(formula, "mlogit", data)
   .tt <- terms(.formula)
@@ -12,12 +12,15 @@ zelig2mlogit <- function (formula, ..., data) {
   ndim <- length(attr(.tt, "depFactors")$depLevels)
 
   cmv <- cmvglm(.formula, "mlogit", ndim, data, .fact)
+  built<-zeligBuildWeights(weights=weights, repweights=repweights, zeros="epsilon", data=data)
+
 
   list(
        .function = "vglm",
 
        formula = cmv$formula,
        constraints = cmv$constraints,
+       weights=built$weights,
 
        family = VGAM::multinomial,
        data = data
