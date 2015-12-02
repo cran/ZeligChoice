@@ -2,24 +2,18 @@ Package: ZeligChoice
 Maintainer: James Honaker <zelig-zee@iq.harvard.edu>
 License: GPL (>= 2)
 Title: Zelig Choice Models
-Type: Package
-LazyLoad: yes
-Author: James Honaker \email{zelig-zee@@iq.harvard.edu} Matt Owen, Kosuke Imai, Olivia Lau and Gary King
-Description: Add-on package for Zelig. Enables the use of a variety of logit
+Author: Christine Choirat, James Honaker, Kosuke Imai, Gary King, Olivia Lau
+Description: Add-on package for Zelig 5. Enables the use of a variety of logit
     and probit regressions.
-Version: 0.8-1
-Date: 2013-09-20
-Depends: Zelig (>= 4.2-0), R (>= 2.10), VGAM (>= 0.8-4)
-Collate: 'blogit.R' 'bprobit.R' 'param.blogit.R' 'param.bprobit.R'
-        'plot.sim.blogit.R' 'plot.sim.bprobit.R' 'qi.blogit.R'
-        'qi.bprobit.R' 'zelig2blogit.R' 'zelig2bprobit.R'
-        'common-methods.R' 'param.ologit.R' 'param.oprobit.R'
-        'plot.sim.ologit.R' 'plot.sim.oprobit.R' 'qi.ologit.R'
-        'qi.oprobit.R' 'summarize.ologit.R' 'summarize.oprobit.R'
-        'zelig2ologit.R' 'zelig2oprobit.R' 'param.mlogit.R'
-        'plot.sim.mlogit.R' 'qi.mlogit.R' 'zelig2mlogit.R' 'describe.R'
-        'ZeligChoice-package.R'
-Packaged: 2013-09-23 13:11:49 UTC; jhonaker
+Version: 0.9-0
+Date: 2015-11-18
+Imports: methods, Zelig (>= 5.0-9), MASS, VGAM, jsonlite, dplyr
+Suggests: testthat, knitr
+Collate: 'model-obinchoice.R' 'model-oprobit.R' 'model-ologit.R'
+        'model-mlogit.R' 'model-bbinchoice.R' 'model-bprobit.R'
+        'model-blogit.R' 'create-json.R'
 NeedsCompilation: no
+Packaged: 2015-12-01 22:59:46 UTC; jhonaker
+Depends: R (>= 2.10)
 Repository: CRAN
-Date/Publication: 2013-09-23 16:20:12
+Date/Publication: 2015-12-02 09:17:09
