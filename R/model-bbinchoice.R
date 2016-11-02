@@ -24,25 +24,23 @@ zbbinchoice$methods(
 )
 
 zbbinchoice$methods(
-  zelig = function(formula, data, ..., weights = NULL, by = NULL) {
+  zelig = function(formula, data, ..., weights = NULL, by = NULL, bootstrap = FALSE) {
     .self$zelig.call <- match.call(expand.dots = TRUE)
     .self$model.call <- match.call(expand.dots = TRUE)
     .self$model.call$family <- .self$family
-    # Zelig 4 compatibility layer
-#     if (is.list(formula)) {
-#       formula[[1]] <- formula(f1)
-#       formula[[2]] <- formula(f2)
-#       f1 <- f[[1]]
-#       f2 <- f[[2]]
-#       formula <- update(f1, cbind(f1, f2) ~ . )
-#     }
-    callSuper(formula = formula, data = data, ..., weights = NULL, by = by)
+    callSuper(formula = formula, data = data, ..., weights = NULL, by = by, bootstrap = bootstrap)
   }
 )
 
 zbbinchoice$methods(
-  param = function(z.out) {
-    return(mvrnorm(.self$num, coef(z.out), vcov(z.out)))
+  param = function(z.out, method="mvn") {
+    if(identical(method,"mvn")){
+      return(mvrnorm(.self$num, coef(z.out), vcov(z.out))) 
+    } else if(identical(method,"point")){
+      return(t(as.matrix(coef(z.out))))
+    } else {
+      stop("param called with method argument of undefined type.")
+    }
   }
 )
 

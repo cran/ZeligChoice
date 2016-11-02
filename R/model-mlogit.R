@@ -28,17 +28,23 @@ zmlogit$methods(
 )
 
 zmlogit$methods(
-  zelig = function(formula, data, ..., weights = NULL, by = NULL) {
+  zelig = function(formula, data, ..., weights = NULL, by = NULL, bootstrap = FALSE) {
     .self$zelig.call <- match.call(expand.dots = TRUE)
     .self$model.call <- match.call(expand.dots = TRUE)
     .self$model.call$family <- .self$family
-    callSuper(formula = formula, data = data, ..., weights = NULL, by = by)
+    callSuper(formula = formula, data = data, ..., weights = NULL, by = by, bootstrap = bootstrap)
   }
 )
 
 zmlogit$methods(
-  param = function(z.out) {
-    return(mvrnorm(.self$num, coef(z.out), vcov(z.out)))
+  param = function(z.out, method="mvn") {
+    if(identical(method,"mvn")){
+      return(mvrnorm(.self$num, coef(z.out), vcov(z.out))) 
+    } else if(identical(method,"point")){
+      return(t(as.matrix(coef(z.out))))
+    } else {
+      stop("param called with method argument of undefined type.")
+    }
   }
 )
 
