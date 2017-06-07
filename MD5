@@ -1,13 +1,13 @@
-c3428b1c387f29ef424fb0536ec21bf4 *DESCRIPTION
+f8bb0b7b780d5f5ec2953c629f8795e5 *DESCRIPTION
 f692b762adcbee68f1a35e850de75eb8 *NAMESPACE
-ead0c4728364b622df613e3c155a941f *NEWS.md
+e64144e43fa2617e23005ffddba90cf4 *NEWS.md
 d2c074767923db20198a3844dcbb58f1 *R/create-json.R
-b1febdc2dff35ea5ff7116c28ef3296d *R/model-bbinchoice.R
+d9b2783702afd531aa0747650dda0884 *R/model-bbinchoice.R
 ce21e34cc591a2c0d1e1ddc8d523de35 *R/model-blogit.R
 49342bd27a805e11bac6ce0265847fb0 *R/model-bprobit.R
 3642b5ba772dd4300f60073789fe8cb3 *R/model-mlogit.R
-ecf143ea8360f55a94e0398c533b3e5a *R/model-obinchoice.R
-f9daaa83e4ee312e930b9c010b50330c *R/model-ologit.R
+f805cf64c22189e613f0e1f81ea40bb7 *R/model-obinchoice.R
+3a17d0ec6f159dcc527e0bc568d357a2 *R/model-ologit.R
 be209e0b0519d12875e40225448be9e7 *R/model-oprobit.R
 0933d5594c16b1c6e51d27fa4d82efb1 *data/coalition.tab
 d9d6edeebc11b21f6f26ce2dd6db3352 *data/sanction.tab
@@ -32,6 +32,6 @@ ec6443ee11736e8d959b4233bb476c92 *man/ev.mlogit.Rd
 8d44a01b87dd6b7c012bc775ddfb58b6 *man/pv.mlogit.Rd
 685e8fe4738e2aad2ad73d7f2388570b *man/sanction.Rd
 eb1b000459ba2709b8007c0cb9fd9274 *tests/testthat.R
-43a574528c9d879173c1f50e92d55bbc *tests/testthat/test-mlogit.R
+1127751289432698fb8c087bc0ebdfd3 *tests/testthat/test-mlogit.R
 c6082c7f29e4b51ab4158e9fdb759f07 *tests/testthat/test-ologit.R
 524dd413c622bf5c114757b3f05f1843 *tests/testthat/test-oprobit.R
